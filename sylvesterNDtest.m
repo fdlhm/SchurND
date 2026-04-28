@@ -1,3 +1,9 @@
+% sylvesterNDtest.m
+% If you use it, please cite the corresponding paper:
+% Carlota M. Cuesta, Francisco de la Hoz,
+% A non-recursive Schur-Decomposition Algorithm for $N$-Dimensional Matrix Equations,
+% arXiv:2412.15840, (2024).
+%
 clear
 rng(1)
 NN=[2 9 33 74 231]; % size of X

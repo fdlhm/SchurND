@@ -2,7 +2,7 @@
 % If you use it, please cite the corresponding paper:
 % Carlota M. Cuesta, Francisco de la Hoz,
 % A non-recursive Schur-Decomposition Algorithm for $N$-Dimensional Matrix Equations,
-% arXiv:2412.15840, (2024).
+% arXiv:2412.15840, (2026).
 %
 clear
 tic
@@ -14,10 +14,13 @@ M=16; % number of nodes at each dimension
 D1=DD(:,:,1); % first-order differentiation matrix
 D2=DD(:,:,2); % second-order differentiation matrix
 AA=cell(1,N); % stores the matrices $\mathbf A_j$
-B=-exp(-x.^2); % creates $\mathbf B$
+XX=cell(1,N); % stores the spatial mesh
+[XX{:}]=ndgrid(x); % creates the spatial mesh
+B=-exp(-XX{1}.^2); % creates $\mathbf B$
 for m=2:N
-    B=B.*permute(exp(-x.^2),[m 2:m-1 1 m+1:N]);
+    B=B.*exp(-XX{m}.^2);
 end
+clear XX % we do not need XX any more
 U0=-2*B; % initial data
 Uexact=-(1+exp(t))*B; % exact solution at time $t$
 A=D2+2*diag(x)*D1+((2*N+1)/N)*eye(M); % creates $\mathbf A_j$

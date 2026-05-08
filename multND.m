@@ -2,7 +2,7 @@
 % If you use it, please cite the corresponding paper:
 % Carlota M. Cuesta, Francisco de la Hoz,
 % A non-recursive Schur-Decomposition Algorithm for $N$-Dimensional Matrix Equations,
-% arXiv:2412.15840, (2024).
+% arXiv:2412.15840, (2026).
 %
 % compute $\mathbf A\square_j\mathbf X$ in MATLAB R2020b or newer
 function X=multND(A,X,j)

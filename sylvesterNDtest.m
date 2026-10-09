@@ -29,7 +29,7 @@ tic, Xnum3=laplace_recursive(AA,B); toc
 disp(max(abs(Xnum1(:)-X(:))))
 disp(max(abs(Xnum2(:)-X(:))))
 disp(max(abs(Xnum3(:)-X(:))))
-% maximum discrepancies between the the numerical approximations
+% maximum discrepancies between the numerical approximations
 disp(max(abs(Xnum1(:)-Xnum2(:))))
 disp(max(abs(Xnum1(:)-Xnum3(:))))
 disp(max(abs(Xnum2(:)-Xnum3(:))))

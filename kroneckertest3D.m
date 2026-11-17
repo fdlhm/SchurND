@@ -11,7 +11,9 @@ A2=rand(NN(2))+1i*rand(NN(2)); % $\mathbf A_2$
 A3=rand(NN(3))+1i*rand(NN(3)); % $\mathbf A_3$
 X=rand(NN)+1i*rand(NN); % solution $\mathbf X$
 B=multND(A1,X,1)+multND(A2,X,2)+multND(A3,X,3); % right-hand side $\mathbf B$
+tic
 A123=kron(kron(A3,eye(NN(2))),eye(NN(1)))+kron(kron(eye(NN(3)),A2),eye(NN(1)))+kron(kron(eye(NN(3)),eye(NN(2))),A1); % $\mathbf A_3\oplus \mathbf A_2\oplus\mathbf A_1$
+toc
 % numerical approximation using Kronecker sums, and elapsed time
 tic, Xnum1=reshape(A123\B(:),NN); toc
 % numerical approximation using sylvesterND, and elapsed time
